@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl" Namespace="Model1.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005">
+        <EntityContainer Name="Model1TargetContainer" >
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="ExRulesModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="ExRulesModelContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Configurations" EntityType="ExRulesModel.Configuration" />
+          <EntitySet Name="ExamRules" EntityType="ExRulesModel.ExamRule" />
+          <AssociationSet Name="ConfigurationExamRule" Association="ExRulesModel.ConfigurationExamRule">
+            <End Role="Configuration" EntitySet="Configurations" />
+            <End Role="ExamRule" EntitySet="ExamRules" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Configuration">
+          <Key>
+            <PropertyRef Name="ConfigurationId" />
+          </Key>
+          <Property Type="Int64" Name="ConfigurationId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="ConfigurationName" Nullable="false" />
+          <NavigationProperty Name="ExamRules" Relationship="ExRulesModel.ConfigurationExamRule" FromRole="Configuration" ToRole="ExamRule" />
+        </EntityType>
+        <EntityType Name="ExamRule">
+          <Key>
+            <PropertyRef Name="RuleId" />
+          </Key>
+          <Property Type="Int64" Name="RuleId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Configuration" Relationship="ExRulesModel.ConfigurationExamRule" FromRole="ExamRule" ToRole="Configuration" />
+          <Property Type="Int64" Name="ConfigurationId" Nullable="false" />
+          <Property Type="String" Name="RuleName" Nullable="false" />
+          <Property Type="String" Name="RuleDescription" Nullable="false" />
+          <Property Type="String" Name="ExamCode" Nullable="false" />
+          <Property Type="String" Name="Status" Nullable="false" />
+          <Property Type="String" Name="Grade" Nullable="false" />
+          <Property Type="String" Name="Operator" Nullable="false" />
+        </EntityType>
+        <Association Name="ConfigurationExamRule">
+          <End Type="ExRulesModel.Configuration" Role="Configuration" Multiplicity="1" />
+          <End Type="ExRulesModel.ExamRule" Role="ExamRule" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Configuration">
+              <PropertyRef Name="ConfigurationId" />
+            </Principal>
+            <Dependent Role="ExamRule">
+              <PropertyRef Name="ConfigurationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs" Space="C-S">
+        <Alias Key="Model" Value="Model1" />
+        <Alias Key="Target" Value="Model1.Store" />
+        <EntityContainerMapping CdmEntityContainer="ExRulesModelContainer" StorageEntityContainer="Model1TargetContainer">
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

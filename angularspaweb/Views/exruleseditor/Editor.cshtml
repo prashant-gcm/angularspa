@@ -1,0 +1,184 @@
+﻿@{
+    ViewBag.Title = "Exception Queue Rules Editor";
+}
+
+<h2>Exception Queue Rules Editor</h2>
+
+<div ng-app="exRulesEditorApp">
+    <ng-view></ng-view>
+</div>
+
+@System.Web.Optimization.Scripts.Render("~/bundles/exruleseditor")
+
+<div class="exruleeditor_code">
+    <br/>
+    <b>Source Code:</b>
+    <br/>
+    <a href="api/exrulesdata/1" target="exruleseditor_model_json">Model JSON data</a>
+    <br/>
+    <a href="scripts/exruleseditor.js" target="exruleseditor_ngappscript">Angular App Script</a>
+    <br />
+    <a href="view-source:http://demoapps-sevenseasteam.azurewebsites.net/templates/exruleseditor/Editor_Exam.html" target="exruleseditor_template">Angular Template</a>
+    <br />
+</div>
+
+<div class="exruleeditor_bdd">
+    <br />
+    <b>BDD/TDD - SpecFlow, NUnit, Selenium</b>
+    <table width="100%" border="1">
+        <tr>
+            <th width="5%">Scenario/Feature: </th>
+            <th colspan="2"><a href="bdd/specflow/features/ShowExamRulesInTable.feature.txt" target="f1">Show Exam Rules In Table in Rules Editor Page</a></th>
+        </tr>
+        <tr>
+            <td>Steps:</td>
+            <td>Given: <a href="bdd/specflow/steps/ShowExamRulesInTable/OpenBrowserWindow.cs.txt" target="f1_g1">I have opened browser window</a></td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>When: <a href="bdd/specflow/steps/ShowExamRulesInTable/NavigateToRulesEditorPage.cs.txt" target="f1_w1">I navigate to default page of the application</a></td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>Then: <a href="bdd/specflow/steps/ShowExamRulesInTable/ShouldDisplayExamRulesInTabularFormat.cs.txt" target="f1_t1">the page should display Exam Rules in a tabular format</a></td>
+        </tr>
+        <tr>
+            <td>Unit Tests:</td>
+            <td><a href="tdd/ShowExamRulesInTableTests.cs.txt" target="f1_tdd1">ShowExamRulesInTableTests.cs</a></td>
+        </tr>
+        <tr>
+            <td colspan="2">&nbsp;</td>
+        </tr>
+        <tr>
+            <th width="5%">Scenario/Feature:</th>
+            <th colspan="2"><a href="bdd/specflow/features/PopuateExamRuleInForm.feature.txt" target="f2">Populate selected exam rule in form when rule name is clicked</a></th>
+        </tr>
+        <tr>
+            <td>Steps:</td>
+            <td>Given: <a href="bdd/specflow/steps/PopuateExamRuleInForm/OpenExamRuleEditorPage.cs.txt" target="f2_g1">I have opened exam rule editor page</a></td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>When: <a href="bdd/specflow/steps/PopuateExamRuleInForm/ClickOnAExamRuleName.cs.txt" target="f2_w1">I click on a exam rule name</a></td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>Then: <a href="bdd/specflow/steps/PopuateExamRuleInForm/ShouldPopulateRuleNameInForm.cs.txt" target="f2_t1">the selected exam rule should populate in the form</a></td>
+        </tr>
+        <tr>
+            <td colspan="2">&nbsp;</td>
+        </tr>
+        <tr>
+            <th>Scenario/Feature:</th>
+            <th><a href="bdd/specflow/features/ModifyExamRuleAndSave.feature.txt" target="f3">click on rule name, change rule name in the form, click on Submit and see the modified rule in grid</a></th>
+        </tr>
+        <tr>
+            <td>Steps:</td>
+            <td>Given: <a href="bdd/specflow/steps/PopuateExamRuleInForm/OpenExamRuleEditorPage.cs.txt" target="f3_g1">I have opened exam rule editor page</a></td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>And <a href="bdd/specflow/steps/ModifyExamRuleAndSave/SelectAExamRuleToEdit.cs.txt" target="f3_g2">I have clicked on a rule name to select the rule to change</a></td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>When <a href="bdd/specflow/steps/ModifyExamRuleAndSave/EditAExamRule.cs.txt" target="f3_w1">I edit rule name</a></td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>And <a href="bdd/specflow/steps/ModifyExamRuleAndSave/ClickOnSubmitButton.cs.txt" target="f3_w2">I click on Submit button</a></td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>Then <a href="bdd/specflow/steps/ModifyExamRuleAndSave/ShouldPopulateChangeInGrid.cs.txt" target="f3_t1">the result should be that the changes in the rule are populated in the grid</a></td>
+        </tr>
+        <tr>
+            <td>Unit Tests:</td>
+            <td><a href="tdd/SaveModifiedExamRuleTests.cs.txt" target="f1_tdd1">SaveModifiedExamRuleTests.cs</a></td>
+        </tr>
+        <tr>
+            <td colspan="2">&nbsp;</td>
+        </tr>
+        <tr>
+            <th>Scenario/Feature:</th>
+            <th><a href="bdd/specflow/features/PopulateNewExamRuleInForm.feature.txt" target="f4">click on New Rule and see empty form and RuleId 0</a></th>
+        </tr>
+        <tr>
+            <td>Steps:</td>
+            <td>Given <a href="bdd/specflow/steps/PopuateExamRuleInForm/OpenExamRuleEditorPage.cs.txt" target="f4_g1">I have opened exam rule editor page</a></td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>When <a href="bdd/specflow/steps/PopulateNewExamRuleInForm/ClickOnCreateNewRuleButton.cs.txt" target="f4_w1">I click on Create New Rule button</a></td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>Then <a href="bdd/specflow/steps/PopulateNewExamRuleInForm/ShouldDisplayEmptyForm.cs.txt" target="f4_t1">the form should be empty and rule id should display as 0</a></td>
+        </tr>
+        <tr>
+            <td>Unit Tests:</td>
+            <td><a href="tdd/ShowNewExamRuleInFormTests.cs.txt" target="f4_tdd1">ShowNewExamRuleInFormTests.cs</a></td>
+        </tr>
+        <tr>
+            <td colspan="2">&nbsp;</td>
+        </tr>
+        <tr>
+            <th>Scenario/Feature:</th>
+            <th><a href="bdd/specflow/features/CreateNewExamRule.feature.txt" target="f5">click on New Rule, enter form details and click on Submit and see the new rule in grid</a></th>
+        </tr>
+        <tr>
+            <td>Steps:</td>
+            <td>Given <a href="bdd/specflow/steps/PopuateExamRuleInForm/OpenExamRuleEditorPage.cs.txt" target="f5_g1">I have opened exam rule editor page</a></td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>When <a href="bdd/specflow/steps/PopulateNewExamRuleInForm/ClickOnCreateNewRuleButton.cs.txt" target="f5_w1">I click on Create New Rule button</a></td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>And <a href="bdd/specflow/steps/CreateNewExamRule/EnterNewExamRuleDetails.cs.txt" target="f5_w2">I enter new exam rule details</a></td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>And <a href="bdd/specflow/steps/ModifyExamRuleAndSave/ClickOnSubmitButton.cs.txt" target="f5_w3">I click on Submit button</a></td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>Then <a href="bdd/specflow/steps/CreateNewExamRule/ShouldDisplayNewRuleInGrid.cs.txt" target="f5_t1">the result should be that the grid shows newly added rule</a></td>
+        </tr>
+        <tr>
+            <td colspan="2">&nbsp;</td>
+        </tr>
+        <tr>
+            <th>Scenario/Feature:</th>
+            <th><a href="bdd/specflow/features/DeleteExamRule.feature.txt" target="f6">check the delete checkboxes, click on Delete selected rules and see the rules disappear from page</a></th>
+        </tr>
+        <tr>
+            <td>Steps:</td>
+            <td>Given <a href="bdd/specflow/steps/PopuateExamRuleInForm/OpenExamRuleEditorPage.cs.txt" target="f6_g1">I have opened exam rule editor page</a></td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>When <a href="bdd/specflow/steps/DeleteExamRule/SelectDeleteCheckboxes.cs.txt" target="f6_w1">I check delete checkboxes for the rules that are to be delteted</a></td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>And <a href="bdd/specflow/steps/DeleteExamRule/ClickOnDeleteSelectedRulesButton.cs.txt" target="f6_w2">I click on Delete Selected Rules button</a></td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>Then <a href="bdd/specflow/steps/DeleteExamRule/SelectedRulesShouldDisappear.cs.txt" target="f6_t1">the selected rules should disappear from the page</a></td>
+        </tr>
+        <tr>
+            <td>Unit Tests:</td>
+            <td><a href="tdd/DeleteExamRulesTests.cs.txt" target="f6_tdd1">DeleteExamRulesTests.cs</a></td>
+        </tr>
+        <tr>
+            <td colspan="2">&nbsp;</td>
+        </tr>
+        <tr>
+            <td>Common BDD Test Helpers:</td>
+            <td><a href="bdd/TestHelpers/CommonHelpers.cs.txt" target="CommonHelpers">CommonHelpers.cs</a></td>
+        </tr>
+</table>
+</div>

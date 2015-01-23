@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="angularspaweb.Models.Model1Container-Web.config Connection String" description="angularspaweb.Models.Model1Container Connection String used in web.config by the application to access the database." defaultValue="angularspaweb.Models.Model1Container_ConnectionString" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="D:\\Prashant\\net4\\ASP\.net4\\angular\\angularspa\\angularspaweb\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='angularspaweb.Models.Model1Container']/@connectionString" />
+  </parameter>
+</parameters>

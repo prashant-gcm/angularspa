@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="ExRulesModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+  <EntityContainer Name="ExRulesModelContainer" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Configurations" EntityType="ExRulesModel.Configuration" />
+    <EntitySet Name="ExamRules" EntityType="ExRulesModel.ExamRule" />
+    <AssociationSet Name="ConfigurationExamRule" Association="ExRulesModel.ConfigurationExamRule">
+      <End Role="Configuration" EntitySet="Configurations" />
+      <End Role="ExamRule" EntitySet="ExamRules" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Configuration">
+    <Key>
+      <PropertyRef Name="ConfigurationId" />
+    </Key>
+    <Property Type="Int64" Name="ConfigurationId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="ConfigurationName" Nullable="false" />
+    <NavigationProperty Name="ExamRules" Relationship="ExRulesModel.ConfigurationExamRule" FromRole="Configuration" ToRole="ExamRule" />
+  </EntityType>
+  <EntityType Name="ExamRule">
+    <Key>
+      <PropertyRef Name="RuleId" />
+    </Key>
+    <Property Type="Int64" Name="RuleId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="Configuration" Relationship="ExRulesModel.ConfigurationExamRule" FromRole="ExamRule" ToRole="Configuration" />
+    <Property Type="Int64" Name="ConfigurationId" Nullable="false" />
+    <Property Type="String" Name="RuleName" Nullable="false" />
+    <Property Type="String" Name="RuleDescription" Nullable="false" />
+    <Property Type="String" Name="ExamCode" Nullable="false" />
+    <Property Type="String" Name="Status" Nullable="false" />
+    <Property Type="String" Name="Grade" Nullable="false" />
+    <Property Type="String" Name="Operator" Nullable="false" />
+  </EntityType>
+  <Association Name="ConfigurationExamRule">
+    <End Type="ExRulesModel.Configuration" Role="Configuration" Multiplicity="1" />
+    <End Type="ExRulesModel.ExamRule" Role="ExamRule" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Configuration">
+        <PropertyRef Name="ConfigurationId" />
+      </Principal>
+      <Dependent Role="ExamRule">
+        <PropertyRef Name="ConfigurationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

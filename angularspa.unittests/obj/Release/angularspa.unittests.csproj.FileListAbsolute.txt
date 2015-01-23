@@ -1,0 +1,16 @@
+D:\Prashant\net4\ASP.net4\angular\angularspa\angularspa.unittests\bin\Release\angularspa.unittests.dll.config
+D:\Prashant\net4\ASP.net4\angular\angularspa\angularspa.unittests\bin\Release\angularspa.unittests.dll
+D:\Prashant\net4\ASP.net4\angular\angularspa\angularspa.unittests\bin\Release\angularspa.unittests.pdb
+D:\Prashant\net4\ASP.net4\angular\angularspa\angularspa.unittests\bin\Release\angularspaweb.dll
+D:\Prashant\net4\ASP.net4\angular\angularspa\angularspa.unittests\bin\Release\Newtonsoft.Json.dll
+D:\Prashant\net4\ASP.net4\angular\angularspa\angularspa.unittests\bin\Release\System.Web.Mvc.dll
+D:\Prashant\net4\ASP.net4\angular\angularspa\angularspa.unittests\bin\Release\EntityFramework.dll
+D:\Prashant\net4\ASP.net4\angular\angularspa\angularspa.unittests\bin\Release\System.Web.Optimization.dll
+D:\Prashant\net4\ASP.net4\angular\angularspa\angularspa.unittests\bin\Release\angularspaweb.pdb
+D:\Prashant\net4\ASP.net4\angular\angularspa\angularspa.unittests\bin\Release\Newtonsoft.Json.xml
+D:\Prashant\net4\ASP.net4\angular\angularspa\angularspa.unittests\bin\Release\System.Web.Mvc.xml
+D:\Prashant\net4\ASP.net4\angular\angularspa\angularspa.unittests\bin\Release\EntityFramework.xml
+D:\Prashant\net4\ASP.net4\angular\angularspa\angularspa.unittests\bin\Release\System.Web.Optimization.xml
+D:\Prashant\net4\ASP.net4\angular\angularspa\angularspa.unittests\obj\Release\angularspa.unittests.csprojResolveAssemblyReference.cache
+D:\Prashant\net4\ASP.net4\angular\angularspa\angularspa.unittests\obj\Release\angularspa.unittests.dll
+D:\Prashant\net4\ASP.net4\angular\angularspa\angularspa.unittests\obj\Release\angularspa.unittests.pdb

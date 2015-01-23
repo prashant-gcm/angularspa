@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<ArrayOfExamRule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ExamRule>
+    <RuleId>1</RuleId>
+    <RuleName>Rule 1 from configuration 2</RuleName>
+    <RuleDescription>Rule Description 1 from configuration 2</RuleDescription>
+    <ExamCode>S3</ExamCode>
+    <Status>COMPLETED</Status>
+    <Grade>PASS</Grade>
+    <Operator>AND</Operator>
+  </ExamRule>
+</ArrayOfExamRule>

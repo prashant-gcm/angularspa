@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "angularspaweb", "angularspaweb\angularspaweb.csproj", "{EEDF63ED-E34A-4979-95EC-0B621BDF6468}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "angularspa.specs", "angularspa.specs\angularspa.specs.csproj", "{BB8E28BE-7967-456F-93F5-844BC2D52256}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "angularspa.unittests", "angularspa.unittests\angularspa.unittests.csproj", "{61703AA9-0FC3-40AD-94DE-3BBE1141D6ED}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EEDF63ED-E34A-4979-95EC-0B621BDF6468}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EEDF63ED-E34A-4979-95EC-0B621BDF6468}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EEDF63ED-E34A-4979-95EC-0B621BDF6468}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EEDF63ED-E34A-4979-95EC-0B621BDF6468}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB8E28BE-7967-456F-93F5-844BC2D52256}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB8E28BE-7967-456F-93F5-844BC2D52256}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB8E28BE-7967-456F-93F5-844BC2D52256}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB8E28BE-7967-456F-93F5-844BC2D52256}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61703AA9-0FC3-40AD-94DE-3BBE1141D6ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61703AA9-0FC3-40AD-94DE-3BBE1141D6ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61703AA9-0FC3-40AD-94DE-3BBE1141D6ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61703AA9-0FC3-40AD-94DE-3BBE1141D6ED}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

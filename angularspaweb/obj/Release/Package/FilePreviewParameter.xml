@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="demoapps-sevenseasteam" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^D:\\Prashant\\net4\\ASP\.net4\\angular\\angularspa\\angularspaweb\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^D:\\Prashant\\net4\\ASP\.net4\\angular\\angularspa\\angularspaweb\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="Add write permission to App_Data Folder" description="Add write permission to App_Data folder" value="demoapps-sevenseasteam/App_Data" tags="Hidden">
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^D:\\Prashant\\net4\\ASP\.net4\\angular\\angularspa\\angularspaweb\\obj\\Release\\Package\\PackageTmp\\App_Data$" />
+  </parameter>
+  <parameter name="angularspaweb.Models.Model1Container-Web.config Connection String" description="" value="angularspaweb.Models.Model1Container_ConnectionString" tags="">
+    <parameterEntry kind="XmlFile" scope="D:\\Prashant\\net4\\ASP\.net4\\angular\\angularspa\\angularspaweb\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='angularspaweb.Models.Model1Container']/@connectionString" />
+  </parameter>
+</parameters>
