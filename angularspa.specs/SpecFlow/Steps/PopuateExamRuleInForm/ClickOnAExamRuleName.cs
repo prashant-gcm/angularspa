@@ -16,7 +16,7 @@ namespace angularspa.specs.SpecFlow.Steps.PopuateExamRuleInForm
         public void WhenIPressClickOnAExamRuleName()
         {
             IWebDriver browserDriver = CommonHelpers.GetBrowserDriver();
-            string rulename = "Rule 1";
+            string rulename = "Rule 2";
             IWebElement rulenameElement = browserDriver.FindElement(By.LinkText(rulename));
 
             rulenameElement.Click();

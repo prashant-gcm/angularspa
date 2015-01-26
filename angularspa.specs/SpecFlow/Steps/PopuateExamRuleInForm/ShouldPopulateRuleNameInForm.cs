@@ -20,7 +20,7 @@ namespace angularspa.specs.SpecFlow.Steps.PopuateExamRuleInForm
             IWebElement formInputElement = browserDriver.FindElement(By.Id("txtRuleName"));
             string inputtext = formInputElement.GetAttribute("value");
 
-            Assert.AreEqual("Rule 1", inputtext);
+            Assert.AreEqual("Rule 2", inputtext);
         }
     }
 }

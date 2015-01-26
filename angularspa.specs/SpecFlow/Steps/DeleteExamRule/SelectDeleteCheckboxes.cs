@@ -18,7 +18,7 @@ namespace angularspa.specs.SpecFlow.Steps.DeleteExamRule
             IWebDriver browserDriver = CommonHelpers.GetBrowserDriver();
             IWebElement element_grid = browserDriver.FindElement(By.ClassName("exruleeditor_grid"));
             IReadOnlyCollection<IWebElement> grid_rows = element_grid.FindElements(By.TagName("tr"));
-            string rownumbers_to_delete = ",2,5,";
+            string rownumbers_to_delete = ",6,7,";
             int row_number = 0;
             bool bcheckbox_selected = false;
             StringBuilder deleted_rule_names = new StringBuilder("");

@@ -142,6 +142,8 @@
     <Compile Include="Models\ExamRule.cs" />
     <Compile Include="Models\ExRulesFileContext.cs" />
     <Compile Include="Models\FileDBContext.cs" />
+    <Compile Include="Models\IDBContext.cs" />
+    <Compile Include="Models\IDBSet.cs" />
     <Compile Include="Models\Model1.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -190,6 +192,7 @@
     <Content Include="BDD\TestHelpers\CommonHelpers.cs.txt" />
     <Content Include="Content\Site.css" />
     <Content Include="Global.asax" />
+    <Content Include="images\SpecFlowAndUnitTestsResult.png" />
     <Content Include="Scripts\angular-animate.js" />
     <Content Include="Scripts\angular-animate.min.js" />
     <Content Include="Scripts\angular-aria.js" />
@@ -962,9 +965,6 @@
     <Content Include="TDD\ShowExamRulesInTableTests.cs.txt" />
     <Content Include="TDD\ShowNewExamRuleInFormTests.cs.txt" />
     <Content Include="Templates\exruleseditor\Editor_Exam.html" />
-    <Content Include="Test1.html" />
-    <Content Include="Test2.html" />
-    <Content Include="Test3.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
