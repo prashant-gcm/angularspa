@@ -19,12 +19,12 @@ namespace angularspaweb.Models
 
         public List<ExamRule> GetExamRules(string dataid)
         {
-            return _ReadFile(ExamRules, dataid);
+            return Select(ExamRules, dataid);
         }
 
         public void SaveExamRules(string dataid, List<ExamRule> data)
         {
-            _SaveExamRules(ExamRules, dataid, data);
+            Update(ExamRules, dataid, data);
         }
 
         public List<ExamRule> GetEmptyExamRule(string section)

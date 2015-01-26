@@ -8,7 +8,7 @@ using System.Xml.Serialization;
 
 namespace angularspaweb.Models
 {
-    public class FileDBContext
+    public class FileDBContext : IDBContext
     {
         private string __app_data_folder_path = "";
 
@@ -28,11 +28,11 @@ namespace angularspaweb.Models
             }
         }
 
-        protected List<T> _ReadFile<T>(FileDBSet<T> filedbset, string dataid)
+        public List<T> Select<T>(IDBSet<T> filedbset, string dataid)
             where T : class
         {
             filedbset.DataId = dataid;
-            string filename = Path.Combine(App_data_folder_path, filedbset.FileName);
+            string filename = Path.Combine(App_data_folder_path, filedbset.StoreName);
 
             XmlSerializer serializer = new XmlSerializer(typeof(List<T>));
 
@@ -45,11 +45,11 @@ namespace angularspaweb.Models
             return data;
         }
 
-        protected void _SaveExamRules<T>(FileDBSet<T> filedbset, string dataid, List<T> data)
+        public void Update<T>(IDBSet<T> filedbset, string dataid, List<T> data)
             where T : class
         {
             filedbset.DataId = dataid;
-            string filename = Path.Combine(App_data_folder_path, filedbset.FileName);
+            string filename = Path.Combine(App_data_folder_path, filedbset.StoreName);
 
             XmlSerializer serializer = new XmlSerializer(typeof(List<T>));
 
@@ -60,8 +60,7 @@ namespace angularspaweb.Models
         }
     }
 
-    public class FileDBSet<T>
-        where T : class
+    public class FileDBSet<T> : IDBSet<T> where T : class
     {
         private string __DBFileName = "";
 
@@ -72,7 +71,7 @@ namespace angularspaweb.Models
 
         public string DataId { get; set; }
 
-        public string FileName
+        public string StoreName
         {
             get
             {

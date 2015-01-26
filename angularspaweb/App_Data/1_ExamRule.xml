@@ -3,7 +3,7 @@
   <ExamRule>
     <RuleId>1</RuleId>
     <RuleName>Rule 2</RuleName>
-    <RuleDescription>Rule Description 2</RuleDescription>
+    <RuleDescription>Rule Description 2 - modified</RuleDescription>
     <ExamCode>S3</ExamCode>
     <Status>REQUESTED</Status>
     <Operator>AND</Operator>
@@ -11,7 +11,7 @@
   <ExamRule>
     <RuleId>2</RuleId>
     <RuleName>Rule 3</RuleName>
-    <RuleDescription>Rule Description 3</RuleDescription>
+    <RuleDescription>Rule Description 3 - modified</RuleDescription>
     <ExamCode>S6</ExamCode>
     <Status>DEFERRED</Status>
     <Operator>AND</Operator>
@@ -25,21 +25,21 @@
     <Operator>OR</Operator>
   </ExamRule>
   <ExamRule>
-    <RuleId>4</RuleId>
-    <RuleName>Rule 1</RuleName>
-    <RuleDescription>Rule Description 1</RuleDescription>
-    <ExamCode>S10</ExamCode>
-    <Status>COMPLETE</Status>
-    <Grade>PASS</Grade>
-    <Operator>AND</Operator>
-  </ExamRule>
-  <ExamRule>
     <RuleId>5</RuleId>
     <RuleName>Rule 4</RuleName>
     <RuleDescription>Rule Description 4</RuleDescription>
     <ExamCode>S4</ExamCode>
     <Status>COMPLETE</Status>
     <Grade>FAIL</Grade>
+    <Operator>AND</Operator>
+  </ExamRule>
+  <ExamRule>
+    <RuleId>7</RuleId>
+    <RuleName>Rule 7</RuleName>
+    <RuleDescription>Rule Description 7</RuleDescription>
+    <ExamCode>S3</ExamCode>
+    <Status>COMPLETE</Status>
+    <Grade>PASS</Grade>
     <Operator>AND</Operator>
   </ExamRule>
 </ArrayOfExamRule>

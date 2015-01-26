@@ -5,7 +5,7 @@
     <RuleName>Rule 1 from configuration 2</RuleName>
     <RuleDescription>Rule Description 1 from configuration 2</RuleDescription>
     <ExamCode>S3</ExamCode>
-    <Status>COMPLETED</Status>
+    <Status>COMPLETE</Status>
     <Grade>PASS</Grade>
     <Operator>AND</Operator>
   </ExamRule>
