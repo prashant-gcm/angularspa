@@ -18,4 +18,3 @@ D:\Prashant\net4\ASP.net4\angular\angularspa\angularspa.specs\bin\Debug\WebDrive
 D:\Prashant\net4\ASP.net4\angular\angularspa\angularspa.specs\bin\Debug\WebDriver.xml
 D:\Prashant\net4\ASP.net4\angular\angularspa\angularspa.specs\bin\Debug\WebDriver.Support.pdb
 D:\Prashant\net4\ASP.net4\angular\angularspa\angularspa.specs\bin\Debug\WebDriver.Support.xml
-D:\Prashant\net4\ASP.net4\angular\angularspa\angularspa.specs\obj\Debug\angularspa.specs.csprojResolveAssemblyReference.cache
