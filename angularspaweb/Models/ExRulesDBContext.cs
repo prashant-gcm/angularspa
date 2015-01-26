@@ -6,12 +6,12 @@ using System.IO;
 
 namespace angularspaweb.Models
 {
-    public class ExRulesFileContext : FileDBContext
+    public class ExRulesDBContext : FileDBContext
     {
-        public FileDBSet<Configuration> Configurations { get; set; }
-        public FileDBSet<ExamRule> ExamRules { get; set; }
+        public IDBSet<Configuration> Configurations { get; set; }
+        public IDBSet<ExamRule> ExamRules { get; set; }
 
-        public ExRulesFileContext()
+        public ExRulesDBContext()
         {
             Configurations = new FileDBSet<Configuration>();
             ExamRules = new FileDBSet<ExamRule>();

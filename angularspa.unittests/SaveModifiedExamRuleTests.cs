@@ -37,7 +37,7 @@ namespace angularspa.unittests
         [TestMethod]
         public void SaveExamRules()
         {
-            ExRulesFileContext exRulesFileContext = new ExRulesFileContext();
+            ExRulesDBContext exRulesFileContext = new ExRulesDBContext();
             List<ExamRule> rules = exRulesFileContext.GetExamRules("1");
 
             bool bTestRuleFound = false;

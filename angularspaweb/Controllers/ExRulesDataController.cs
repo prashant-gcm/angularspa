@@ -13,7 +13,7 @@ namespace angularspaweb.Controllers
     {
         public List<ExamRule> Get(string configurationid, string section, string empty)
         {
-            ExRulesFileContext filecontext = new ExRulesFileContext();
+            ExRulesDBContext filecontext = new ExRulesDBContext();
 
             if (empty != "empty")
             {
@@ -30,7 +30,7 @@ namespace angularspaweb.Controllers
         {
             if (data.IndexOf("deleteruleids") == -1)
             {
-                ExRulesFileContext filecontext = new ExRulesFileContext();
+                ExRulesDBContext filecontext = new ExRulesDBContext();
                 List<ExamRule> listdata = JsonConvert.DeserializeObject<List<ExamRule>>(data);
                 filecontext.SaveExamRules(configurationid, listdata);
             }
@@ -43,7 +43,7 @@ namespace angularspaweb.Controllers
 
         public void Delete(string configurationid, string section, string ruleids)
         {
-            ExRulesFileContext filecontext = new ExRulesFileContext();
+            ExRulesDBContext filecontext = new ExRulesDBContext();
             List<ExamRule> examrules = filecontext.GetExamRules(configurationid);
             List<ExamRule> newexamrules = new List<ExamRule>();
             foreach (ExamRule rule in examrules)

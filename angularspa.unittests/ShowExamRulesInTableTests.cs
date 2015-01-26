@@ -22,7 +22,7 @@ namespace angularspa.unittests
         [TestMethod]
         public void GetExamRules()
         {
-            ExRulesFileContext exRulesFileContext = new ExRulesFileContext();
+            ExRulesDBContext exRulesFileContext = new ExRulesDBContext();
             List<ExamRule> rules = exRulesFileContext.GetExamRules("1");
 
             Assert.IsNotNull(rules);

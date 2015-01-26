@@ -140,7 +140,7 @@
     </Compile>
     <Compile Include="Models\Configuration.cs" />
     <Compile Include="Models\ExamRule.cs" />
-    <Compile Include="Models\ExRulesFileContext.cs" />
+    <Compile Include="Models\ExRulesDBContext.cs" />
     <Compile Include="Models\FileDBContext.cs" />
     <Compile Include="Models\IDBContext.cs" />
     <Compile Include="Models\IDBSet.cs" />
