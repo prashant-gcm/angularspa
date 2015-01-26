@@ -1,11 +1,11 @@
 ﻿(function () {
     var exRulesEditorApp = angular.module('exRulesEditorApp', ['ngRoute']);
 
-    exRulesEditorApp.config(['$routeProvider', function ($routeProvider) {
+    exRulesEditorApp.config(['$routeProvider', 'ExRulesEditorContext', function ($routeProvider, ExRulesEditorContext) {
         $routeProvider.when("/exam", {
             templateUrl: "templates/exruleseditor/Editor_Exam.html"
         }).otherwise({
-            redirectTo: "/" + __currentSection
+            redirectTo: "/" + ExRulesEditorContext.currentSection
         });
     }]);
 
@@ -32,10 +32,10 @@
         return eventService;
     }]);
 
-    exRulesEditorApp.service('ExRulesEditorCUDService', ['$http', function ($http) {
+    exRulesEditorApp.service('ExRulesEditorCUDService', ['$http', 'ExRulesEditorContext', function ($http, ExRulesEditorContext) {
         var cudService = {};
-        cudService.url = "api/exrulesdata/" + __currentConfigurationId + "/" + __currentSection + "/data";
-        cudService.urlforemptydata = "api/exrulesdata/" + __currentConfigurationId + "/" + __currentSection + "/empty";
+        cudService.url = "api/exrulesdata/" + ExRulesEditorContext.currentConfigurationId + "/" + ExRulesEditorContext.currentSection + "/data";
+        cudService.urlforemptydata = "api/exrulesdata/" + ExRulesEditorContext.currentConfigurationId + "/" + ExRulesEditorContext.currentSection + "/empty";
 
         this.fetchRules = function () {
             return $http.get(cudService.url).then(function (pdata) {
@@ -84,7 +84,7 @@
         }
     }]);
 
-    exRulesEditorApp.controller('ViewExRulesController', ['$scope', 'ExRulesEditorEventService', 'ExRulesEditorCUDService', function ($scope, $ExRulesEditorEventService, $ExRulesEditorCUDService) {
+    exRulesEditorApp.controller('ViewExRulesController', ['$scope', 'ExRulesEditorEventService', 'ExRulesEditorCUDService', 'ExRulesEditorContext', function ($scope, $ExRulesEditorEventService, $ExRulesEditorCUDService, ExRulesEditorContext) {
         $scope.fetchRules = function() {
             $ExRulesEditorCUDService.fetchRules().then(function (pdata) {
                 $scope.postFetchRules(pdata);
@@ -108,7 +108,7 @@
 
         $scope.onCreateNewRule = function () {
             //alert("onCreateNewRule called");
-            $ExRulesEditorCUDService.getNewRule(__currentSection).then(function (pdata) {
+            $ExRulesEditorCUDService.getNewRule(ExRulesEditorContext.currentSection).then(function (pdata) {
                 $scope.postGetNewRule(pdata[0]);
                 //alert("data received from ExRulesEditorCUDService.getNewRule: " + pdata);
             });
@@ -229,6 +229,6 @@
         }
     }]);
 
-    var __currentSection = "exam";
-    var __currentConfigurationId = "1";
+    var __ExRuleEditorContext = { currentSection: "exam", currentConfigurationId: "1" };
+    exRulesEditorApp.constant('ExRulesEditorContext', __ExRuleEditorContext);
 })();
