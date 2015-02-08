@@ -51,11 +51,11 @@ describe('To test ExRuleEditor', function () {
         $httpBackend.verifyNoOutstandingRequest();
     });
 
-    xit('should initialize application properly', function () {
+    it('should initialize application properly', function () {
         expect($location.path()).toBe('/exam');
     });
 
-    xit('should bind data to the template', function () {
+    it('should bind data to the template', function () {
         var elem;
         elem = viewtemplate_bound.find('table.RuleTable tr');
         expect(elem.length).toBe(6);
@@ -67,7 +67,7 @@ describe('To test ExRuleEditor', function () {
         expect(elem.length).toBe(1);
     });
 
-    xit('should populate form when rule name is clicked', function() {
+    it('should populate form when rule name is clicked', function() {
         var elem;
         elem = viewtemplate_bound.find("table.RuleTable tr td a:contains('Rule 1')");
         expect(elem.length).toBe(1);
@@ -88,7 +88,7 @@ describe('To test ExRuleEditor', function () {
         expect(elem[0].value).toBe("S6");
     });
 
-    xit('should clear form when create new rule button is clicked', function () {
+    it('should clear form when create new rule button is clicked', function () {
         var elem;
         elem = viewtemplate_bound.find("table.RuleTable tr td a:contains('Rule 1')");
         expect(elem.length).toBe(1);
