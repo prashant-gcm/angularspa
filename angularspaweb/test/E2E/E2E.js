@@ -97,8 +97,16 @@ describe('In angularspa page', function () {
     }, 5000);
 
     it('should delete rows from the grid when delete checkboxes are selected and then the delete selected rule button is clicked', function () {
-        element(by.id("chkboxRuleDelete_" + "14")).click();
-        //element(by.id("chkboxRuleDelete_" + "15")).click();
+        element(by.id("chkboxRuleDelete_" + "8")).then(function(pchk){
+            pchk.click();
+        }, function(perr){
+            console.log("Test row for rule id 8 is not found.")
+        });
+        element(by.id("chkboxRuleDelete_" + "5")).then(function(pchk){
+            pchk.click();
+        }, function(perr){
+            console.log("Test row for rule id 5 is not found.")
+        });
 
         var btnDeleteRules = element(by.id('btnDeleteRules'));
         console.log("expect: btnDeleteRules exists");
@@ -107,8 +115,8 @@ describe('In angularspa page', function () {
         btnDeleteRules.click();
         browser.sleep(2000);
 
-        expect(element(by.id("chkboxRuleDelete_" + "14")).isPresent()).toBeFalsy();
-        //expect(element(by.id("chkboxRuleDelete_" + "15")).isPresent()).toBeFalsy();
+        expect(element(by.id("chkboxRuleDelete_" + "8")).isPresent()).toBeFalsy();
+        expect(element(by.id("chkboxRuleDelete_" + "5")).isPresent()).toBeFalsy();
     }, 5000);
 
     function selectARuleToEdit(ptocheck){
@@ -126,7 +134,7 @@ describe('In angularspa page', function () {
                         console.log("expect: input textbox for rule name is found on the page");
                         expect(finput, "expect: input textbox for rule name is found on the page").not.toBe(null);
                         console.log("expect: input text for rule name is populated by name of selected rule");
-                        expect(finput.getAttribute("value"), "expect: input text for rule name is populated by name of selected rule"),toEqual(ptocheck);
+                        expect(finput.getAttribute("value")[0], "expect: input text for rule name is populated by name of selected rule").toEqual(ptocheck);
                     }
                     console.log("expect: required test rule name is found on the page");
                     expect(vanchor, "expect: required test rule name is found on the page").not.toBe(null);

@@ -1,0 +1,59 @@
+D:\Prashant\net4\ASP.net4\angular\angularspa\angularspaweb>protractor conf.js
+Using the selenium server at http://127.0.0.1:4444/wd/hub
+[launcher] Running 1 instances of WebDriver
+expect: class exruleeditor_grid exists
+expect: class exruleeditor_form exists
+.expect: required test rule name is found on the page
+expect: required test rule name is found on the page
+expect: required test rule name is found on the page
+expect: required test rule name is found on the page
+expect: required test rule name is found on the page
+expect: required test rule name is found on the page
+expect: required test rule name is found on the page
+expect: required test rule name is found on the page
+expect: required test rule name is found on the page
+expect: required test rule name is found on the page
+expect: required test rule name is found on the page
+.expect: btnCreateNewRule exists
+expect: required test rule name is found on the page
+expect: required test rule name is found on the page
+expect: required test rule name is found on the page
+expect: required test rule name is found on the page
+expect: required test rule name is found on the page
+expect: required test rule name is found on the page
+expect: required test rule name is found on the page
+expect: required test rule name is found on the page
+expect: required test rule name is found on the page
+expect: required test rule name is found on the page
+expect: required test rule name is found on the page
+expect: Rule Id is displayed as 0 on the page
+expect: test element that displays rule id is found
+.expect: btnRuleSubmit exists
+expect: input textbox for rule name is found on the page
+expect: required test rule name is found on the page
+expect: required test rule name is found on the page
+expect: required test rule name is found on the page
+expect: required test rule name is found on the page
+expect: required test rule name is found on the page
+expect: required test rule name is found on the page
+expect: required test rule name is found on the page
+expect: required test rule name is found on the page
+expect: required test rule name is found on the page
+expect: required test rule name is found on the page
+expect: required test rule name is found on the page
+expect: saved changes are displayed in grid
+.expect: btnCreateNewRule exists
+expect: btnRuleSubmit exists
+expect: saved changes are displayed in grid
+.expect: btnDeleteRules exists
+Test row for rule id 8 is not found.
+Test row for rule id 5 is not found.
+.
+
+Finished in 49.257 seconds
+6 tests, 47 assertions, 0 failures
+
+[launcher] 0 instance(s) of WebDriver still running
+[launcher] chrome #1 passed
+
+D:\Prashant\net4\ASP.net4\angular\angularspa\angularspaweb>

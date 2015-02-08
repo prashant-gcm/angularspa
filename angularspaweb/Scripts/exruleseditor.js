@@ -175,6 +175,10 @@
             $scope.onClickRuleName(pcurrentrule.RuleId);
         };
 
+        $scope.getRules = function(){
+            return $scope.Rules;
+        }
+
         function getMatchingRule(pruleid) {
             var vrule = {};
             for (var rcnt = 0; rcnt < $scope.Rules.length; rcnt++) {
@@ -237,6 +241,10 @@
         $scope.onSaveExRuleChange = function () {
             //alert("Submitting saveExRuleChange");
             $ExRulesEditorEventService.onSaveExRuleChange($scope.CurrentRule);
+        }
+
+        $scope.getCurrentRule = function(){
+            return $scope.CurrentRule;
         }
     }]);
 

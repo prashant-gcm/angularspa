@@ -38,12 +38,16 @@
         cudService.urlforemptydata = "api/exrulesdata/" + ExRulesEditorContext.currentConfigurationId + "/" + ExRulesEditorContext.currentSection + "/empty";
 
         this.fetchRules = function () {
+            console.log("ExRulesEditorCUDService.fetchRules is called");
             return $http.get(cudService.url).then(function (pdata) {
                 return pdata.data;
+            }, function (pdata) {
+                //alert("Fetch rules failed");
             });
         }
 
-        this.getNewRule = function (pdatatype) {
+        this.getNewRule = function () {
+            console.log("ExRulesEditorCUDService.getNewRule is called");
             return $http.get(cudService.urlforemptydata).then(function (pdata) {
                 return pdata.data;
             }, function (pdata) {
@@ -52,6 +56,7 @@
         }
 
         this.deleteRules = function (pdata) {
+            console.log("ExRulesEditorCUDService.deleteRules is called");
             return $http({
                 method: 'POST',
                 url: cudService.url,
@@ -67,6 +72,7 @@
         }
 
         this.saveExRuleChange = function (pdata) {
+            console.log("ExRulesEditorCUDService.saveExRuleChange is called");
             var vdata = JSON.stringify(pdata);
 
             return $http({
@@ -82,6 +88,10 @@
                 //alert("Submit failed");
             });
         }
+
+        this.getInfo = function () {
+            return cudService;
+        };
     }]);
 
     exRulesEditorApp.controller('ViewExRulesController', ['$scope', 'ExRulesEditorEventService', 'ExRulesEditorCUDService', 'ExRulesEditorContext', function ($scope, $ExRulesEditorEventService, $ExRulesEditorCUDService, ExRulesEditorContext) {
@@ -205,13 +215,13 @@
         }
 
         {
-            $scope.Rules = [];
+            //$scope.Rules = [];
             $scope.fetchRules();
         }
     }]);
 
     exRulesEditorApp.controller('ExRulesFormController', ['$scope', 'ExRulesEditorEventService', function ($scope, $ExRulesEditorEventService) {
-        $scope.CurrentRule = {};
+        //$scope.CurrentRule = {};
 
         $scope.$on('ClickRuleName', function () {
             //alert("Received from view: " + $ExRulesEditorEventService.data);
@@ -220,6 +230,7 @@
 
         $scope.$on('CreateNewRule', function () {
             //alert("Received from view: " + $ExRulesEditorEventService.data);
+            console.log('ExRulesFormController.CreateNewRule handler is called...' + $ExRulesEditorEventService.data.RuleId);
             $scope.CurrentRule = $ExRulesEditorEventService.data;
         });
 
