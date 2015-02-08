@@ -1,0 +1,167 @@
+D:\Prashant\net4\ASP.net4\angular\angularspa>npm install -g protractor
+npm http GET https://registry.npmjs.org/protractor
+npm http 200 https://registry.npmjs.org/protractor
+npm http GET https://registry.npmjs.org/protractor/-/protractor-1.6.1.tgz
+npm http 200 https://registry.npmjs.org/protractor/-/protractor-1.6.1.tgz
+npm http GET https://registry.npmjs.org/request
+npm http GET https://registry.npmjs.org/jasminewd
+npm http GET https://registry.npmjs.org/jasminewd2
+npm http GET https://registry.npmjs.org/jasmine
+npm http GET https://registry.npmjs.org/source-map-support
+npm http GET https://registry.npmjs.org/glob
+npm http GET https://registry.npmjs.org/saucelabs
+npm http GET https://registry.npmjs.org/minijasminenode
+npm http GET https://registry.npmjs.org/adm-zip
+npm http 200 https://registry.npmjs.org/jasminewd2
+npm http GET https://registry.npmjs.org/selenium-webdriver
+npm http 200 https://registry.npmjs.org/jasminewd
+npm http GET https://registry.npmjs.org/lodash
+npm http GET https://registry.npmjs.org/q
+npm http 200 https://registry.npmjs.org/jasmine
+npm http 304 https://registry.npmjs.org/glob
+npm http GET https://registry.npmjs.org/jasminewd2/-/jasminewd2-0.0.2.tgz
+npm http GET https://registry.npmjs.org/jasminewd/-/jasminewd-1.1.0.tgz
+npm http GET https://registry.npmjs.org/jasmine/-/jasmine-2.1.1.tgz
+npm http GET https://registry.npmjs.org/optimist
+npm http 200 https://registry.npmjs.org/source-map-support
+npm http GET https://registry.npmjs.org/source-map-support/-/source-map-support-0.2.9.tgz
+npm http 200 https://registry.npmjs.org/request
+npm http 200 https://registry.npmjs.org/minijasminenode
+npm http 200 https://registry.npmjs.org/adm-zip
+npm http GET https://registry.npmjs.org/minijasminenode/-/minijasminenode-1.1.1.tgz
+npm http 200 https://registry.npmjs.org/saucelabs
+npm http GET https://registry.npmjs.org/adm-zip/-/adm-zip-0.4.4.tgz
+npm http 200 https://registry.npmjs.org/selenium-webdriver
+npm http GET https://registry.npmjs.org/selenium-webdriver/-/selenium-webdriver-2.44.0.tgz
+npm http 200 https://registry.npmjs.org/jasminewd2/-/jasminewd2-0.0.2.tgz
+npm http 200 https://registry.npmjs.org/optimist
+npm http 200 https://registry.npmjs.org/jasminewd/-/jasminewd-1.1.0.tgz
+npm http 200 https://registry.npmjs.org/source-map-support/-/source-map-support-0.2.9.tgz
+npm http 200 https://registry.npmjs.org/jasmine/-/jasmine-2.1.1.tgz
+npm http 200 https://registry.npmjs.org/lodash
+npm http 200 https://registry.npmjs.org/adm-zip/-/adm-zip-0.4.4.tgz
+npm http 200 https://registry.npmjs.org/q
+npm http 200 https://registry.npmjs.org/selenium-webdriver/-/selenium-webdriver-2.44.0.tgz
+npm http GET https://registry.npmjs.org/q/-/q-1.0.0.tgz
+npm http 200 https://registry.npmjs.org/minijasminenode/-/minijasminenode-1.1.1.tgz
+npm http 200 https://registry.npmjs.org/q/-/q-1.0.0.tgz
+npm http GET https://registry.npmjs.org/json-stringify-safe
+npm http GET https://registry.npmjs.org/qs
+npm http GET https://registry.npmjs.org/forever-agent
+npm http GET https://registry.npmjs.org/node-uuid
+npm http GET https://registry.npmjs.org/form-data
+npm http GET https://registry.npmjs.org/tunnel-agent
+npm http GET https://registry.npmjs.org/tough-cookie
+npm http GET https://registry.npmjs.org/http-signature
+npm http GET https://registry.npmjs.org/oauth-sign
+npm http GET https://registry.npmjs.org/hawk
+npm http GET https://registry.npmjs.org/aws-sign2
+npm http GET https://registry.npmjs.org/mime
+npm http 304 https://registry.npmjs.org/json-stringify-safe
+npm http 304 https://registry.npmjs.org/forever-agent
+npm http 304 https://registry.npmjs.org/form-data
+npm http GET https://registry.npmjs.org/jasmine-core
+npm http 200 https://registry.npmjs.org/node-uuid
+npm http 304 https://registry.npmjs.org/http-signature
+npm http 304 https://registry.npmjs.org/tunnel-agent
+npm http 304 https://registry.npmjs.org/tough-cookie
+npm http 200 https://registry.npmjs.org/qs
+npm http 304 https://registry.npmjs.org/hawk
+npm http 304 https://registry.npmjs.org/oauth-sign
+npm http 304 https://registry.npmjs.org/aws-sign2
+npm http 200 https://registry.npmjs.org/jasmine-core
+npm http 200 https://registry.npmjs.org/mime
+npm http GET https://registry.npmjs.org/inherits
+npm http GET https://registry.npmjs.org/minimatch
+npm http 304 https://registry.npmjs.org/inherits
+npm http 304 https://registry.npmjs.org/minimatch
+npm http GET https://registry.npmjs.org/minimist
+npm http 200 https://registry.npmjs.org/minimist
+npm http GET https://registry.npmjs.org/wordwrap
+npm http 200 https://registry.npmjs.org/wordwrap
+npm http GET https://registry.npmjs.org/lru-cache
+npm http GET https://registry.npmjs.org/sigmund
+npm http 304 https://registry.npmjs.org/sigmund
+npm http 200 https://registry.npmjs.org/lru-cache
+npm http GET https://registry.npmjs.org/combined-stream
+npm http GET https://registry.npmjs.org/async
+npm http GET https://registry.npmjs.org/assert-plus
+npm http GET https://registry.npmjs.org/asn1
+npm http GET https://registry.npmjs.org/ctype
+npm http 304 https://registry.npmjs.org/combined-stream
+npm http GET https://registry.npmjs.org/punycode
+npm http 304 https://registry.npmjs.org/asn1
+npm http 304 https://registry.npmjs.org/ctype
+npm http 304 https://registry.npmjs.org/assert-plus
+npm http 200 https://registry.npmjs.org/async
+npm http GET https://registry.npmjs.org/source-map
+npm http 304 https://registry.npmjs.org/punycode
+npm http GET https://registry.npmjs.org/delayed-stream
+npm http GET https://registry.npmjs.org/boom
+npm http GET https://registry.npmjs.org/hoek
+npm http GET https://registry.npmjs.org/cryptiles
+npm http GET https://registry.npmjs.org/sntp
+npm http 200 https://registry.npmjs.org/source-map
+npm http GET https://registry.npmjs.org/source-map/-/source-map-0.1.32.tgz
+npm http 304 https://registry.npmjs.org/sntp
+npm http 304 https://registry.npmjs.org/delayed-stream
+npm http 304 https://registry.npmjs.org/boom
+npm http 304 https://registry.npmjs.org/cryptiles
+npm http 304 https://registry.npmjs.org/hoek
+npm http 200 https://registry.npmjs.org/source-map/-/source-map-0.1.32.tgz
+npm http GET https://registry.npmjs.org/amdefine
+npm http 200 https://registry.npmjs.org/amdefine
+npm http GET https://registry.npmjs.org/tmp
+npm http GET https://registry.npmjs.org/xml2js
+npm http 200 https://registry.npmjs.org/tmp
+npm http GET https://registry.npmjs.org/tmp/-/tmp-0.0.24.tgz
+npm http 200 https://registry.npmjs.org/xml2js
+npm http GET https://registry.npmjs.org/xml2js/-/xml2js-0.4.4.tgz
+npm http 200 https://registry.npmjs.org/tmp/-/tmp-0.0.24.tgz
+npm http 200 https://registry.npmjs.org/xml2js/-/xml2js-0.4.4.tgz
+npm http GET https://registry.npmjs.org/sax
+npm http GET https://registry.npmjs.org/xmlbuilder
+npm http 200 https://registry.npmjs.org/sax
+npm http 200 https://registry.npmjs.org/xmlbuilder
+npm http GET https://registry.npmjs.org/xmlbuilder/-/xmlbuilder-2.5.0.tgz
+npm http 200 https://registry.npmjs.org/xmlbuilder/-/xmlbuilder-2.5.0.tgz
+npm http GET https://registry.npmjs.org/lodash
+npm http 304 https://registry.npmjs.org/lodash
+npm http GET https://registry.npmjs.org/lodash/-/lodash-3.0.1.tgz
+npm http 200 https://registry.npmjs.org/lodash/-/lodash-3.0.1.tgz
+C:\Program Files\nodejs\protractor -> C:\Program Files\nodejs\node_modules\protractor\bin\protractor
+C:\Program Files\nodejs\webdriver-manager -> C:\Program Files\nodejs\node_modules\protractor\bin\webdriver-manager
+protractor@1.6.1 C:\Program Files\nodejs\node_modules\protractor
++-- jasminewd2@0.0.2
++-- jasminewd@1.1.0
++-- q@1.0.0
++-- saucelabs@0.1.1
++-- minijasminenode@1.1.1
++-- adm-zip@0.4.4
++-- lodash@2.4.1
++-- glob@3.2.11 (inherits@2.0.1, minimatch@0.3.0)
++-- optimist@0.6.1 (wordwrap@0.0.2, minimist@0.0.10)
++-- request@2.36.0 (forever-agent@0.5.2, aws-sign2@0.5.0, json-stringify-safe@5.0.0, tunnel-agent@0.4.0, oauth-sign@0.3.0, mime@1.2.11, qs@0.6.6, node
+-uuid@1.4.2, tough-cookie@0.12.1, http-signature@0.10.1, form-data@0.1.4, hawk@1.0.0)
++-- source-map-support@0.2.9 (source-map@0.1.32)
++-- jasmine@2.1.1 (jasmine-core@2.1.3)
++-- selenium-webdriver@2.44.0 (tmp@0.0.24, xml2js@0.4.4)
+
+D:\Prashant\net4\ASP.net4\angular\angularspa>
+
+D:\Prashant\net4\ASP.net4\angular\angularspa>webdriver-manager update
+Updating selenium standalone
+downloading https://selenium-release.storage.googleapis.com/2.44/selenium-server-standalone-2.44.0.jar...
+Updating chromedriver
+downloading https://chromedriver.storage.googleapis.com/2.13/chromedriver_win32.zip...
+chromedriver_2.13.zip downloaded to C:\Program Files\nodejs\node_modules\protractor\selenium\chromedriver_2.13.zip
+selenium-server-standalone-2.44.0.jar downloaded to C:\Program Files\nodejs\node_modules\protractor\selenium\selenium-server-standalone-2.44.0.jar
+
+
+D:\Prashant\net4\ASP.net4\angular\angularspa>npm install -g jasmine-reporters@~1.0.0
+npm http GET https://registry.npmjs.org/jasmine-reporters
+npm http 304 https://registry.npmjs.org/jasmine-reporters
+npm http GET https://registry.npmjs.org/mkdirp
+npm http 304 https://registry.npmjs.org/mkdirp
+jasmine-reporters@1.0.1 C:\Program Files\nodejs\node_modules\jasmine-reporters
++-- mkdirp@0.3.5

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites>
+<testsuite name="In angularspa page" errors="0" tests="6" failures="0" time="49.907" timestamp="2015-02-08T11:59:18">
+  <testcase classname="In angularspa page" name="should display HTML table and form below it when the page is opened" time="7.234"></testcase>
+  <testcase classname="In angularspa page" name="should populate exam rule in form when name of rule is clicked" time="6.826"></testcase>
+  <testcase classname="In angularspa page" name="should clear exam rule in form and display rule id 0 when create new rule button is clicked" time="7.094"></testcase>
+  <testcase classname="In angularspa page" name="should display modified data in grid when a rule data is modified in form and submit button is clicked" time="8.5"></testcase>
+  <testcase classname="In angularspa page" name="should add new rule to the grid when create new rule button is clicked, rule data is entered and submit button is clicked" time="12.094"></testcase>
+  <testcase classname="In angularspa page" name="should delete rows from the grid when delete checkboxes are selected and then the delete selected rule button is clicked" time="8.157"></testcase>
+</testsuite>
+</testsuites>

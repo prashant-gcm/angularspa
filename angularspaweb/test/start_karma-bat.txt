@@ -1,0 +1,28 @@
+node D:\Prashant\net4\ASP.net4\angular\karma\node_modules\karma\bin\karma start D:\Prashant\net4\ASP.net4\angular\angularspa\test\karma.conf.js
+
+node D:\Prashant\net4\ASP.net4\angular\karma\node_modules\karma\bin\karma start D:\Prashant\net4\ASP.net4\angular\html2js\ng-directive-testing\karma.conf.js
+
+From D drive: Windows 8
+node D:\Prashant\net4\ASP.net4\angular\karma\node_modules\karma\bin\karma start D:\Prashant\net4\ASP.net4\angular\angularspa\test\karma.conf.js
+
+From C drive: Windows 2008
+node C:\Prashant\net4\ASP.net4\angular\karma\node_modules\karma\bin\karma start
+
+D:\Prashant\net4\ASP.net4\angular\angularspa\test\karma.conf.js
+
+
+D:\Prashant\net4\ASP.net4\angular\html2js\angular-testing-starter\node_modules\protractor\selenium\chromedriver.exe
+
+WARN [watcher]: Pattern "C:\Prashant\net4\ASP.net4\angular\cabmeter\test\cabmeter\Specs\jquery-1.8.1.min.js" does not match any file.
+
+C:\Prashant\net4\ASP.net4\angular\cabmeter\test\cabmeter\Specs\jquery-1.8.1.min.js
+
+
+Protractor testing
+cd D:\Prashant\net4\ASP.net4\angular\angularspa\angularspaweb
+
+- start webdriver HTTP site
+webdriver-manager start
+
+- run test config
+protractor conf.js

@@ -1,0 +1,14 @@
+-- To run scripts that refer to global node modules
+set NODE_PATH=C:\Program Files\nodejs\node_modules
+
+-- installed modules
+npm install -g underscore
+npm install express -g
+npm install -g express-generator
+npm install -g angularjs
+npm install -g bootstrap
+npm install -g generator-karma -- installed yo also???
+npm install -g grunt-cli
+npm install -g node-gyp
+npm install -g protractor
+npm install -g jasmine-reporters

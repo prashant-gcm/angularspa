@@ -1,0 +1,23 @@
+{
+  "name": "uitests",
+  "version": "0.0.0",
+  "description": "Karma UI Tests",
+  "main": "",
+  "scripts": {
+    "test": "karma start"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "Prashant Mahajan <prashantma@hotmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "jasmine-core": "2.1.3",
+    "karma": "0.12.31",
+    "karma-chrome-launcher": "0.1.7",
+    "karma-html-reporter": "^0.2.6",
+    "karma-jasmine": "0.3.5",
+    "karma-ng-html2js-preprocessor": "0.1.2"
+  }
+}
