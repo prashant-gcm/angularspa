@@ -1,11 +1,11 @@
 ﻿(function () {
     var exRulesEditorApp = angular.module('exRulesEditorApp', ['ngRoute']);
 
-    exRulesEditorApp.config(['$routeProvider', function ($routeProvider) {
+    exRulesEditorApp.config(['$routeProvider', 'ExRulesEditorContext', function ($routeProvider, ExRulesEditorContext) {
         $routeProvider.when("/exam", {
             templateUrl: "templates/exruleseditor/Editor_Exam.html"
         }).otherwise({
-            redirectTo: "/" + __currentSection
+            redirectTo: "/" + ExRulesEditorContext.currentSection
         });
     }]);
 
@@ -32,41 +32,41 @@
         return eventService;
     }]);
 
-    exRulesEditorApp.service('ExRulesEditorCUDService', ['$http', function ($http) {
+    exRulesEditorApp.service('ExRulesEditorCUDService', ['$http', 'ExRulesEditorContext', function ($http, ExRulesEditorContext) {
         var cudService = {};
-        cudService.url = "api/exrulesdata/" + __currentConfigurationId + "/" + __currentSection + "/data";
-        cudService.urlforemptydata = "api/exrulesdata/" + __currentConfigurationId + "/" + __currentSection + "/empty";
+        cudService.url = "api/exrulesdata/" + ExRulesEditorContext.currentConfigurationId + "/" + ExRulesEditorContext.currentSection + "/data";
+        cudService.urlforemptydata = "api/exrulesdata/" + ExRulesEditorContext.currentConfigurationId + "/" + ExRulesEditorContext.currentSection + "/empty";
 
-        this.fetchRules = function (psuccessfn) {
-            return $http.get(cudService.url).success(function (pdata) {
-                psuccessfn(pdata);
-                //alert("data received by ExRulesEditorCUDService.fetchRules: " + pdata);
+        this.fetchRules = function () {
+            return $http.get(cudService.url).then(function (pdata) {
+                return pdata.data;
             });
         }
 
-        this.getNewRule = function (pdatatype, psuccessfn) {
-            return $http.get(cudService.urlforemptydata).success(function (pdata) {
-                psuccessfn(pdata);
-                //alert("data received by ExRulesEditorCUDService.getNewRule: " + pdata);
+        this.getNewRule = function (pdatatype) {
+            return $http.get(cudService.urlforemptydata).then(function (pdata) {
+                return pdata.data;
+            }, function (pdata) {
+                //alert("Get new rule failed");
             });
         }
 
-        this.deleteRules = function (pdata, psuccessfn) {
-            $http({
+        this.deleteRules = function (pdata) {
+            return $http({
                 method: 'POST',
                 url: cudService.url,
                 headers: {
                     'Content-Type': "application/json"
                 },
                 data: JSON.stringify(pdata)
-            }).success(function (data, status, headers, config) {
-                psuccessfn();
-            }).error(function (data, status, headers, config) {
-                alert("Delete failed");
+            }).then(function (pdata) {
+                return pdata.data;
+            }, function (pdata) {
+                //alert("Delete failed");
             });
         }
 
-        this.saveExRuleChange = function (pdata, psuccessfn) {
+        this.saveExRuleChange = function (pdata) {
             var vdata = JSON.stringify(pdata);
 
             return $http({
@@ -76,18 +76,25 @@
                     'Content-Type': "application/json"
                 },
                 data: JSON.stringify(vdata)
-            }).success(function (data, status, headers, config) {
-                //alert("Rule is saved");
-                psuccessfn();
-            }).error(function (data, status, headers, config) {
-                alert("Submit failed");
+            }).then(function (pdata) {
+                return pdata.data;
+            }, function (pdata) {
+                //alert("Submit failed");
             });
         }
     }]);
 
-    exRulesEditorApp.controller('ViewExRulesController', ['$scope', 'ExRulesEditorEventService', 'ExRulesEditorCUDService', function ($scope, $ExRulesEditorEventService, $ExRulesEditorCUDService) {
-        $scope.postFetchRules = function (data) {
-            $scope.Rules = data;
+    exRulesEditorApp.controller('ViewExRulesController', ['$scope', 'ExRulesEditorEventService', 'ExRulesEditorCUDService', 'ExRulesEditorContext', function ($scope, $ExRulesEditorEventService, $ExRulesEditorCUDService, ExRulesEditorContext) {
+        $scope.fetchRules = function() {
+            $ExRulesEditorCUDService.fetchRules().then(function (pdata) {
+                $scope.postFetchRules(pdata);
+                //alert("data received from ExRulesEditorCUDService.fetchRules: " + pdata);
+            });
+        }
+
+        $scope.postFetchRules = function (pdata) {
+            $scope.Rules = pdata;
+            $scope.onCreateNewRule();   // clear form after fetching rules from server
             //alert("data received by ViewExRulesController: " + $scope.Rules);
         };
 
@@ -101,8 +108,9 @@
 
         $scope.onCreateNewRule = function () {
             //alert("onCreateNewRule called");
-            $ExRulesEditorCUDService.getNewRule(__currentSection, function (pnewrule) {
-                $scope.postGetNewRule(pnewrule[0]);
+            $ExRulesEditorCUDService.getNewRule(ExRulesEditorContext.currentSection).then(function (pdata) {
+                $scope.postGetNewRule(pdata[0]);
+                //alert("data received from ExRulesEditorCUDService.getNewRule: " + pdata);
             });
         }
 
@@ -125,7 +133,7 @@
             vruleids = { deleteruleids: vruleids };
             var vdata = JSON.stringify(vruleids);
 
-            $ExRulesEditorCUDService.deleteRules(vdata, function () {
+            $ExRulesEditorCUDService.deleteRules(vdata).then(function (pdata) {
                 $scope.postDeleteRules();
             });
 
@@ -133,8 +141,8 @@
         }
 
         $scope.postDeleteRules = function () {
-            $ExRulesEditorCUDService.fetchRules($scope.postFetchRules);
-            $scope.onCreateNewRule();
+            //alert("postDeleteRules called");
+            $scope.fetchRules();
         };
 
         $scope.$on('SaveExRuleChange', function () {
@@ -145,7 +153,8 @@
             }
             //alert("after copyRule: " + vcurrentrule.RuleName);
 
-            $ExRulesEditorCUDService.saveExRuleChange($scope.Rules, function () {
+            $ExRulesEditorCUDService.saveExRuleChange($scope.Rules).then(function (pdata) {
+                //alert("Rule is saved");
                 $scope.postSaveExRuleChange(vcurrentrule);
             });
 
@@ -156,7 +165,7 @@
             $scope.onClickRuleName(pcurrentrule.RuleId);
         };
 
-        getMatchingRule = function (pruleid) {
+        function getMatchingRule(pruleid) {
             var vrule = {};
             for (var rcnt = 0; rcnt < $scope.Rules.length; rcnt++) {
                 var arule = $scope.Rules[rcnt];
@@ -197,7 +206,7 @@
 
         {
             $scope.Rules = [];
-            $ExRulesEditorCUDService.fetchRules($scope.postFetchRules);
+            $scope.fetchRules();
         }
     }]);
 
@@ -220,6 +229,6 @@
         }
     }]);
 
-    var __currentSection = "exam";
-    var __currentConfigurationId = "1";
+    var __ExRuleEditorContext = { currentSection: "exam", currentConfigurationId: "1" };
+    exRulesEditorApp.constant('ExRulesEditorContext', __ExRuleEditorContext);
 })();

@@ -1,0 +1,11 @@
+[
+        {
+            "RuleId": 0,
+            "RuleName": "",
+            "RuleDescription": "",
+            "ExamCode": "",
+            "Status": "",
+            "Grade": "",
+            "Operator":"AND"
+        }
+]
