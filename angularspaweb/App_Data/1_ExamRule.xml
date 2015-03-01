@@ -2,44 +2,44 @@
 <ArrayOfExamRule xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <ExamRule>
     <RuleId>1</RuleId>
-    <RuleName>Rule 2</RuleName>
-    <RuleDescription>Rule Description 2 - modified</RuleDescription>
+    <RuleName>Rule 1</RuleName>
+    <RuleDescription>Rule Description 1</RuleDescription>
     <ExamCode>S3</ExamCode>
     <Status>REQUESTED</Status>
     <Operator>AND</Operator>
   </ExamRule>
   <ExamRule>
     <RuleId>2</RuleId>
-    <RuleName>Rule 3</RuleName>
-    <RuleDescription>Rule Description 3 - modified</RuleDescription>
+    <RuleName>Rule 2</RuleName>
+    <RuleDescription>Rule Description 2</RuleDescription>
     <ExamCode>S6</ExamCode>
     <Status>DEFERRED</Status>
     <Operator>AND</Operator>
   </ExamRule>
   <ExamRule>
     <RuleId>3</RuleId>
-    <RuleName>Rule 5</RuleName>
-    <RuleDescription>Rule Description 5</RuleDescription>
+    <RuleName>Rule 3</RuleName>
+    <RuleDescription>Rule Description 3</RuleDescription>
     <ExamCode>S12</ExamCode>
     <Status>SCHEDULED</Status>
     <Operator>OR</Operator>
   </ExamRule>
   <ExamRule>
-    <RuleId>5</RuleId>
+    <RuleId>4</RuleId>
     <RuleName>Rule 4</RuleName>
     <RuleDescription>Rule Description 4</RuleDescription>
-    <ExamCode>S4</ExamCode>
-    <Status>COMPLETE</Status>
-    <Grade>FAIL</Grade>
-    <Operator>AND</Operator>
-  </ExamRule>
-  <ExamRule>
-    <RuleId>7</RuleId>
-    <RuleName>Rule 7</RuleName>
-    <RuleDescription>Rule Description 7</RuleDescription>
     <ExamCode>S3</ExamCode>
     <Status>COMPLETE</Status>
     <Grade>PASS</Grade>
+    <Operator>AND</Operator>
+  </ExamRule>
+  <ExamRule>
+    <RuleId>5</RuleId>
+    <RuleName>New Rule 5</RuleName>
+    <RuleDescription>New Rule 5 Description</RuleDescription>
+    <ExamCode>S3</ExamCode>
+    <Status>COMPLETE</Status>
+    <Grade>FAIL</Grade>
     <Operator>AND</Operator>
   </ExamRule>
 </ArrayOfExamRule>

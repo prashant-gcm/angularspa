@@ -1048,7 +1048,10 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Properties\PublishProfiles\demoapps-sevenseasteam - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\demoapps-sevenseasteam - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\demoapps-sevenseasteam-prashantma3.pubxml" />
+    <None Include="Properties\PublishProfiles\demoapps-sevenseasteam-prashantma4.pubxml" />
     <None Include="Properties\PublishProfiles\demoapps-sevenseasteam.pubxml" />
   </ItemGroup>
   <PropertyGroup>
