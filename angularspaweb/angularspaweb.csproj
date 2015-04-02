@@ -165,6 +165,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Content Include="App_Data\1_ExamRule.xml" />
     <Content Include="App_Data\ReadMe.txt" />
     <Content Include="BDD\SpecFlow\Features\CreateNewExamRule.feature.txt" />
     <Content Include="BDD\SpecFlow\Features\DeleteExamRule.feature.txt" />
@@ -974,7 +975,9 @@
     </Content>
     <Content Include="Views\Web.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="test\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>
@@ -1052,7 +1055,7 @@
     <None Include="Properties\PublishProfiles\demoapps-sevenseasteam - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\demoapps-sevenseasteam-prashantma3.pubxml" />
     <None Include="Properties\PublishProfiles\demoapps-sevenseasteam-prashantma4.pubxml" />
-    <None Include="Properties\PublishProfiles\demoapps-sevenseasteam.pubxml" />
+    <None Include="Properties\PublishProfiles\demoapps-sevenseasteam-prashantma5.pubxml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

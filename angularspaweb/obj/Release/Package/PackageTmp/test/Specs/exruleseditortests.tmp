@@ -1,0 +1,201 @@
+describe('To test ExRuleEditor', function () {
+    var ngRoute_module = module('ngRoute');
+
+    beforeEach(module('exRulesEditorApp', [ngRoute_module]));
+    beforeEach(module('templates/exruleseditor/Editor_Exam.html'));
+    beforeEach(module('test/Data/TestData_Exam.json'));
+    beforeEach(module('test/Data/TestData_Exam_Empty.json'));
+
+    var $controller;
+    var viewExRulesController_scope;
+    var exRulesFormController_scope;
+    var $rootScope;
+    var $route;
+    var $location;
+    var $ExRulesEditorEventService;
+    var $ExRulesEditorCUDService;
+    var $httpBackend;
+    var $ExRulesEditorContext;
+    var $templateCache;
+    var cudServiceInfo;
+    var viewExRulesController;
+    var exRulesFormController;
+    var mainapptemplate;
+    var mainapptemplate_bound;
+    var viewtemplate;
+    var viewtemplate_compiled;
+    var viewtemplate_bound;
+    var formtemplate;
+    var formtemplate_bound;
+
+    beforeEach(inject(function (_$controller_, _$rootScope_, _$route_, _$location_, _ExRulesEditorEventService_, _ExRulesEditorCUDService_, _ExRulesEditorContext_, _$httpBackend_, _$templateCache_, $compile) {
+        $controller = _$controller_;
+        $rootScope = _$rootScope_;
+        $route = _$route_;
+        $location = _$location_;
+        viewExRulesController_scope = $rootScope.$new();
+        exRulesFormController_scope = $rootScope.$new();
+        $ExRulesEditorEventService = _ExRulesEditorEventService_;
+        $ExRulesEditorCUDService = _ExRulesEditorCUDService_;
+        $ExRulesEditorContext = _ExRulesEditorContext_;
+        $httpBackend = _$httpBackend_;
+        $templateCache = _$templateCache_;
+
+        cudServiceInfo = $ExRulesEditorCUDService.getInfo();
+        //console.log(cudServiceInfo);
+        $httpBackend.whenGET(cudServiceInfo.url).respond(200, $templateCache.get('test/Data/TestData_Exam.json'));
+        $httpBackend.whenGET(cudServiceInfo.urlforemptydata).respond(200, $templateCache.get('test/Data/TestData_Exam_Empty.json'));
+        $httpBackend.expectGET(cudServiceInfo.url);
+        $httpBackend.expectGET("templates/exruleseditor/Editor_Exam.html");
+
+        viewExRulesController = $controller('ViewExRulesController', { $scope: viewExRulesController_scope, ExRulesEditorEventService: $ExRulesEditorEventService, ExRulesEditorCUDService: $ExRulesEditorCUDService, ExRulesEditorContext: $ExRulesEditorContext });
+        exRulesFormController = $controller('ExRulesFormController', { $scope: exRulesFormController_scope, ExRulesEditorEventService: $ExRulesEditorEventService });
+        // The router works with the digest lifecycle, wherein after the location is set,
+        // it takes a single digest loop cycle to process the route,
+        // transform the page content, and finish the routing.
+        // In order to trigger the location request, we’ll run a digest cycle (on the $rootScope) 
+        // and check that the controller is as expected.
+        $rootScope.$digest();
+        viewExRulesController_scope.postFetchRules(eval($templateCache.get('test/Data/TestData_Exam.json')));
+        $rootScope.$digest();
+        viewExRulesController_scope.postGetNewRule(eval($templateCache.get('test/Data/TestData_Exam_Empty.json'))[0]);
+
+        //console.log(viewExRulesController_scope);
+        //console.log(viewExRulesController_scope.Rules);
+        //expect(viewExRulesController_scope.Rules.length).toBe(5);
+        //console.log(exRulesFormController_scope);
+        //console.log(exRulesFormController_scope.CurrentRule);
+        //expect(exRulesFormController_scope.CurrentRule.RuleId).toBe(0);
+        //console.log($location.absUrl());
+        //console.log($route.current);
+        //console.log($templateCache.get('test/Data/TestData_Exam.json'));
+        //console.log($templateCache.get('templates/exruleseditor/Editor_Exam.html'));
+
+        mainapptemplate = angular.element($templateCache.get('templates/exruleseditor/Editor_Exam.html'));
+        //console.log(mainapptemplate);
+        //mainapptemplate_bound = ($compile(mainapptemplate))($rootScope);
+        //console.log(mainapptemplate_bound.html());
+        viewtemplate = mainapptemplate['0'];
+        //console.log(viewtemplate);
+        //viewtemplate_compiled = $compile(viewtemplate);
+        //console.log(viewtemplate);
+        //console.log("viewtemplate_compiled: " + viewtemplate_compiled);
+        //viewtemplate_bound = viewtemplate_compiled(viewExRulesController_scope);
+        //expect(viewExRulesController_scope.Rules.length).toBe(5);
+        viewtemplate_bound = ($compile(viewtemplate))(viewExRulesController_scope);
+        viewExRulesController_scope.$digest();
+        //console.log(viewtemplate_bound.html());
+        //console.log(viewtemplate);
+        //expect(viewExRulesController_scope.Rules.length).toBe(5);
+
+        formemplate = mainapptemplate['2'];
+        //console.log(formemplate);
+        //expect(exRulesFormController_scope.CurrentRule.RuleId).toBe(0);
+        formtemplate_bound = ($compile(formemplate))(exRulesFormController_scope);
+        exRulesFormController_scope.$digest();
+        //console.log(formtemplate_bound.html());
+        //console.log(formemplate);
+        //expect(exRulesFormController_scope.CurrentRule.RuleId).toBe(0);
+    }));
+
+    it('should initialize application properly', function () {
+        expect($ExRulesEditorEventService).toBeTruthy();
+        expect($ExRulesEditorContext.currentSection).toEqual("exam");
+        expect($ExRulesEditorContext.currentConfigurationId).toEqual("1");
+
+        expect($ExRulesEditorEventService).toBeTruthy();
+        //expect($ExRulesEditorEventService.data).toEqual({});
+
+        expect($ExRulesEditorCUDService).toBeTruthy();
+        expect($ExRulesEditorCUDService.fetchRules).toBeTruthy();
+
+        expect(viewExRulesController).toBeTruthy();
+
+        expect($location.path()).toBe('/exam');
+        //expect($route.current.controller).toBe('ViewExRulesController');
+    });
+
+    it('should bind data to the template', function () {
+        var elem;
+        //console.log(mainapptemplate);
+        elem = viewtemplate_bound.find('table.RuleTable tr');
+        expect(elem.length).toBe(viewExRulesController_scope.Rules.length + 1);
+
+        elem = formtemplate_bound.find("form[id='formexrules']");
+        expect(elem.length).toBe(1);
+
+        elem = formtemplate_bound.find("select[id='selectGrade']");
+        expect(elem.length).toBe(1);
+    });
+
+    it('should populate form when rule name is clicked', function() {
+        var elem;
+        elem = viewtemplate_bound.find("table.RuleTable tr td a:contains('Rule 1')");
+        expect(elem.length).toBe(1);
+        elem.click();
+        //console.log(mainapptemplate);
+
+        elem = formtemplate_bound.find("input[id='txtRuleDescrption']");
+        expect(elem.length).toBe(1);
+        //console.log(elem[0].value);
+        expect(elem[0].value).toBe("Rule Description 1");
+
+        elem = viewtemplate_bound.find("table.RuleTable tr td a:contains('Rule 3')");
+        expect(elem.length).toBe(1);
+        elem.click();
+
+        elem = formtemplate_bound.find("select[id='selectExamCode']");
+        expect(elem.length).toBe(1);
+        //console.log(elem[0].value);
+        expect(elem[0].value).toBe("S6");
+    });
+
+    it('should clear form when create new rule button is clicked', function ($injector) {
+        var elem;
+        elem = viewtemplate_bound.find("table.RuleTable tr td a:contains('Rule 1')");
+        expect(elem.length).toBe(1);
+        elem.click();
+
+        elem = formtemplate_bound.find("input[id='txtRuleDescrption']");
+        expect(elem.length).toBe(1);
+        //console.log(elem[0].value);
+        expect(elem[0].value).toBe("Rule Description 1");
+
+        $httpBackend = $injector("$httpBackend");
+
+        elem = viewtemplate_bound.find("[id='btnCreateNewRule']");
+        expect(elem.length).toBe(1);
+        //console.log(elem[0].id);
+        $httpBackend.expectGET(cudServiceInfo.urlforemptydata);
+        elem[0].click();
+
+        viewExRulesController_scope.postGetNewRule(eval($templateCache.get('test/Data/TestData_Exam_Empty.json'))[0]);
+        exRulesFormController_scope.$digest();
+        //console.log(mainapptemplate);
+
+        elem = formtemplate_bound.find("input[id='txtRuleDescrption']");
+        expect(elem.length).toBe(1);
+        //console.log(elem[0].value);
+        expect(elem[0].value).toBe("");
+    });
+
+    describe('To test ExRuleEditor Submit', function () {
+        it('should save changes when submit button is clicked', function ($injector) {
+            var elem;
+            elem = viewtemplate_bound.find("table.RuleTable tr td a:contains('Rule 2')");
+            expect(elem.length).toBe(1);
+            elem.click();
+
+            elem = formtemplate_bound.find("input[id='txtRuleDescrption']");
+            expect(elem.length).toBe(1);
+            elem[0].value = "Rule Description 2 - modified";
+
+            elem = formtemplate_bound.find("[id='btnRuleSubmit']");
+            $httpBackend = $injector("$httpBackend");
+            $httpBackend.expectPOST(cudServiceInfo.url).respond(200, '');
+            $httpBackend.expectGET("templates/exruleseditor/Editor_Exam.html");
+            elem.click();
+            //console.log(mainapptemplate);
+        });
+    });
+});

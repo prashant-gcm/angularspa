@@ -801,3 +801,37 @@ table, td, tr, th, .RuleTable
 .exruleeditor_bdd table {
     border-style: outset;
 }
+
+.exruleeditor_karma{
+    margin-left:25px;
+    background-color:coral;
+}
+
+.exruleeditor_karma th {
+    background-color: blueviolet;
+}
+
+.exruleeditor_karma td {
+    padding-left: 20px;
+}
+
+.exruleeditor_karma table {
+    border-style: outset;
+}
+
+.exruleeditor_e2e{
+    margin-left:25px;
+    background-color:khaki;
+}
+
+.exruleeditor_e2e th {
+    background-color: yellow;
+}
+
+.exruleeditor_e2e td {
+    padding-left: 20px;
+}
+
+.exruleeditor_e2e table {
+    border-style: outset;
+}
