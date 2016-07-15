@@ -37,12 +37,17 @@ namespace angularspaweb.Controllers
             else
             {
                 string ruleids = data.Replace("\"", "").Replace("deleteruleids:", "").Replace("{", "").Replace("}", "").Trim();
-                Delete(configurationid, section, ruleids);
+                Delete(configurationid + ":" + section + ":" + ruleids);
             }
         }
 
-        public void Delete(string configurationid, string section, string ruleids)
+        [HttpDelete]
+        public void Delete(string todeleteruleids)
         {
+            string[] arrtodeleteruleids = todeleteruleids.Split(':');
+            string configurationid = arrtodeleteruleids[0];
+            string section = arrtodeleteruleids[1];
+            string ruleids = arrtodeleteruleids[2];
             ExRulesDBContext filecontext = new ExRulesDBContext();
             List<ExamRule> examrules = filecontext.GetExamRules(configurationid);
             List<ExamRule> newexamrules = new List<ExamRule>();

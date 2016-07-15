@@ -1,0 +1,47 @@
+﻿<div class="exruleeditor_form">
+    <form (ngSubmit)="onSaveExRuleChange($event)" #formexrules="ngForm">
+        <fieldset>
+            <legend>Rule Details</legend>
+            <label>Rule Id</label>
+            <br/>{{CurrentRule.RuleId}}<br />
+            <label>Rule Name</label>
+            <input type="text" id="txtRuleName" [(ngModel)]="CurrentRule.RuleName" ngControl="RuleName" class="form-control" /><br />
+            <label>Rule Description</label>
+            <input type="text" id="txtRuleDescrption" [(ngModel)]="CurrentRule.RuleDescription" ngControl="RuleDescription" class="form-control" required /><br />
+            <label>Exam</label>
+            <select id="selectExamCode" [(ngModel)]="CurrentRule.ExamCode" ngControl="ExamCode" class="form-control" required>
+                <option value=""></option>
+                <option value="S10">S10</option>
+                <option value="S3">S3</option>
+                <option value="S6">S6</option>
+                <option value="S4">S4</option>
+                <option value="S12">S12</option>
+            </select>
+            <br />
+            <label>Status</label>
+            <select id="selectStatus" [(ngModel)]="CurrentRule.Status" class="form-control" ngControl="Status">
+                <option value=""></option>
+                <option value="COMPLETE">COMPLETE</option>
+                <option value="REQUESTED">REQUESTED</option>
+                <option value="DEFERRED">DEFERRED</option>
+                <option value="SCHEDULED">SCHEDULED</option>
+                <option value="EXPIRED">EXPIRED</option>
+            </select>
+            <br />
+            <label>Grade</label>
+            <select id="selectGrade" [(ngModel)]="CurrentRule.Grade" class="form-control" ngControl="Grade">
+                <option value=""></option>
+                <option value="PASS">PASS</option>
+                <option value="FAIL">FAIL</option>
+            </select>
+            <br />
+            <label>Operator</label>
+            <select id="selectOperator" [(ngModel)]="CurrentRule.Operator" class="form-control" ngControl="Operator" required>
+                <option value="AND">AND</option>
+                <option value="OR">OR</option>
+            </select>
+            <br /><br />
+            <button id="btnRuleSubmit" type="submit" class="btn btn-default" [disabled]="!formexrules.form.valid">Submit</button>
+        </fieldset>
+    </form>
+</div>

@@ -1,0 +1,27 @@
+﻿<div class="exruleeditor_grid">
+    <h4>List of rules (Section: Exams)</h4>
+    <table class="RuleTable">
+        <tr>
+            <th width="5%" align="center">Delete</th>
+            <th width="10%">Rule Name</th>
+            <th width="15%">Rule Description</th>
+            <th width="10%">Exam</th>
+            <th width="25%">Status</th>
+            <th width="25%">Grade</th>
+            <th width="10%" align="center">And / Or</th>
+        </tr>
+        <tr *ngFor="let rule of Rules">
+            <td width="5%" align="center"><input id="chkboxRuleDelete_{{rule.RuleId}}" type="checkbox" (change)="onClickRuleDelete(rule.RuleId)" /> </td>
+            <td width="10%"><a (click)="onClickRuleName(rule.RuleId)">{{rule.RuleName}}</a></td>
+            <td width="15%">{{rule.RuleDescription}}</td>
+            <td width="10%">{{rule.ExamCode}}</td>
+            <td width="25%">{{rule.Status}}</td>
+            <td width="25%">{{rule.Grade}}</td>
+            <td width="10%" align="center">{{rule.Operator}}</td>
+        </tr>
+    </table>
+    <br />
+    <button id="btnDeleteRules" type="button" (click)="onDeleteRules()">Delete Selected Rules</button>
+    <button id="btnCreateNewRule" type="button" (click)="onCreateNewRule()">Create New Rule</button>
+    <br /><br />
+</div>

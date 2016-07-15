@@ -1,18 +1,45 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
+@if (ViewBag.AngularVersion == "3")
+{
+    <base href="/angularspa/exruleseditor/exruleseditor/editor2">
+}
+@if (ViewBag.AngularVersion == "2")
+{
+    <base href="/">
+}
 <meta charset="utf-8" />
 <title>@ViewBag.Title</title>
 @System.Web.Optimization.Styles.Render("~/Content/css")
+@if (ViewBag.AngularVersion == "2")
+{
+    <!-- 1. Load libraries -->
+    <!-- Polyfill(s) for older browsers -->
+    <script src="Scripts2/node_modules/core-js/client/shim.min.js"></script>
+    <script src="Scripts2/node_modules/zone.js/dist/zone.js"></script>
+    <script src="Scripts2/node_modules/reflect-metadata/Reflect.js"></script>
+    <script src="Scripts2/node_modules/systemjs/dist/system.src.js"></script>
+    <!-- 2. Configure SystemJS -->
+    <script src="Scripts2/systemjs.config.js"></script>
+    <script>
+      System.import('app').catch(function(err){ console.error(err); });
+    </script>
+}
 </head>
 <body>
-<ul id="menu">
-<li>@Html.ActionLink("Exception Queue Rules Editor", "editor", "exruleseditor")</li>
-</ul>
-@System.Web.Optimization.Scripts.Render("~/bundles/angular")
+    <ul id="menu">
+        <li>@Html.ActionLink("Exception Queue Rules Editor (Angular 1.x.x)", "editor", "exruleseditor")</li>
+        <li>@Html.ActionLink("Exception Queue Rules Editor (Angular 2.x.x)", "editor2", "exruleseditor")</li>
+    </ul>
+@if (ViewBag.AngularVersion == "1")
+{
+    @System.Web.Optimization.Scripts.Render("~/bundles/angular")
+}
 <section id="main">
 @RenderBody()
-<p>Copyright Prashant Mahajan 2015. All Rights Reserved. Last Updated: 04/02/2015</p>
+<p>Copyright Prashant Mahajan 2016. All Rights Reserved. Last Updated: 07/15/2016</p>
 </section>
+<br /><br /><br /><br /><br /><br />
 </body>
 </html>

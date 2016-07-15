@@ -10,9 +10,17 @@ namespace angularspaweb.Controllers
     {
         //
         // GET: /Exruleseditor/
-
         public ActionResult Editor()
         {
+            ViewBag.AngularVersion = "1";
+            return View();
+        }
+
+        //
+        // GET: /Exruleseditor/Editor2
+        public ActionResult Editor2()
+        {
+            ViewBag.AngularVersion = "2";
             return View();
         }
 
