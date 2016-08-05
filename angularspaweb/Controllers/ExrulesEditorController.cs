@@ -12,7 +12,7 @@ namespace angularspaweb.Controllers
         // GET: /Exruleseditor/
         public ActionResult Editor()
         {
-            ViewBag.AngularVersion = "1";
+            ViewBag.JsUIFrameworkType = "1";
             return View();
         }
 
@@ -20,7 +20,15 @@ namespace angularspaweb.Controllers
         // GET: /Exruleseditor/Editor2
         public ActionResult Editor2()
         {
-            ViewBag.AngularVersion = "2";
+            ViewBag.JsUIFrameworkType = "2";
+            return View();
+        }
+
+        //
+        // GET: /Exruleseditor/Editor3
+        public ActionResult Editor3()
+        {
+            ViewBag.JsUIFrameworkType = "3";
             return View();
         }
 

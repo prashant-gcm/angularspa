@@ -144,6 +144,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\JsxBundleTransform.cs" />
     <Compile Include="Controllers\ExRulesData2Controller.cs" />
     <Compile Include="Controllers\ExRulesDataController.cs" />
     <Compile Include="Controllers\ExrulesEditorController.cs" />
@@ -205,7 +206,9 @@
     <Content Include="Content\Site.css" />
     <Content Include="Global.asax" />
     <Content Include="images\SpecFlowAndUnitTestsResult.png" />
+    <Content Include="karma.conf.js" />
     <Content Include="Privacy.html" />
+    <Content Include="protractor.conf.js" />
     <Content Include="Scripts2\app.component.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -4826,6 +4829,25 @@
     <Content Include="Scripts2\typings.json.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Scripts3\EventEmitter\EventEmitter.js" />
+    <Content Include="Scripts3\EventEmitter\EventEmitter.min.js" />
+    <Content Include="Scripts3\exruleseditor.js.txt" />
+    <Content Include="Scripts3\exruleseditorcontext.js.txt" />
+    <Content Include="Scripts3\exruleseditorform.js.txt" />
+    <Content Include="Scripts3\exruleseditorstore.js.txt" />
+    <Content Include="Scripts3\exruleseditorview.js.txt" />
+    <Content Include="Scripts3\ruleseditoractions.js" />
+    <Content Include="Scripts3\exruleseditorcontext.js" />
+    <Content Include="Scripts3\ruleseditoractions.js.txt" />
+    <Content Include="Scripts3\ruleseditorconstants.js.txt" />
+    <Content Include="Scripts3\ruleseditordispatcher.js" />
+    <Content Include="Scripts3\exruleseditorstore.js" />
+    <Content Include="Scripts3\facebook\flux\dist\Flux.js" />
+    <Content Include="Scripts3\facebook\flux\dist\Flux.min.js" />
+    <Content Include="Scripts3\facebook\flux\dist\FluxUtils.js" />
+    <Content Include="Scripts3\facebook\flux\dist\FluxUtils.min.js" />
+    <Content Include="Scripts3\ruleseditorconstants.js" />
+    <Content Include="Scripts3\ruleseditordispatcher.js.txt" />
     <Content Include="Scripts\angular-animate.js" />
     <Content Include="Scripts\angular-animate.min.js" />
     <Content Include="Scripts\angular-aria.js" />
@@ -5601,6 +5623,23 @@
     <Content Include="Templates\exruleseditor\Editor2_Exam_Form.html" />
     <Content Include="Templates\exruleseditor\Editor2_Exam_View.html" />
     <Content Include="Templates\exruleseditor\Editor_Exam.html" />
+    <Content Include="test\.idea\encodings.xml" />
+    <Content Include="test\.idea\misc.xml" />
+    <Content Include="test\.idea\modules.xml" />
+    <Content Include="test\.idea\scopes\scope_settings.xml" />
+    <Content Include="test\.idea\vcs.xml" />
+    <Content Include="test\.idea\workspace.xml" />
+    <Content Include="test\Data\TestData_Exam.json.txt" />
+    <Content Include="test\Data\TestData_Exam_Empty.json.txt" />
+    <Content Include="test\E2E\E2E.js" />
+    <Content Include="test\installed_packages.txt" />
+    <Content Include="test\karma_html\Chrome 40.0.2214 %28Windows 8.1%29\index.html" />
+    <Content Include="test\protractor-npm-install.txt" />
+    <Content Include="test\protractor_html\Inangularspapage.xml" />
+    <Content Include="test\setup_karma.txt" />
+    <Content Include="test\Specs\exruleseditortests.js" />
+    <Content Include="test\Specs\jquery-1.8.1.min.js" />
+    <Content Include="test\start_karma-bat.txt" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -7315,6 +7354,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Scripts2\package.json" />
+    <Content Include="package-karma.json" />
     <None Include="Properties\PublishProfiles\demoapps-sevenseasteam - FTP %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\demoapps-sevenseasteam-prashantma8.pubxml" />
     <None Include="Properties\PublishProfiles\demoapps-sevenseasteam - Web Deploy.pubxml" />
@@ -7353,10 +7393,24 @@
     <Content Include="Scripts2\rxjs-operators.js.map">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="test\.idea\.name" />
+    <Content Include="test\.idea\test.iml" />
+    <Content Include="test\Data\TestData_Exam.json" />
+    <Content Include="test\Data\TestData_Exam_Empty.json" />
+    <Content Include="test\E2E\E2E.log" />
+    <Content Include="test\E2E\E2E.out" />
+    <Content Include="test\Specs\exruleseditortests.tmp" />
+    <Content Include="Views\exruleseditor\Editor3.cshtml" />
+    <Content Include="Scripts3\exruleseditor.jsx" />
+    <Content Include="Scripts3\exruleseditorview.jsx" />
+    <Content Include="Scripts3\exruleseditorform.jsx" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RunPostBuildEvent>Always</RunPostBuildEvent>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
@@ -7390,6 +7444,8 @@
   <PropertyGroup>
     <PostBuildEvent>copy $(ProjectDir)\Scripts2\*.ts $(ProjectDir)\Scripts2\*.ts.txt
 copy $(ProjectDir)\Scripts2\*.json $(ProjectDir)\Scripts2\*.json.txt
+copy $(ProjectDir)\Scripts3\*.jsx $(ProjectDir)\Scripts3\*.js.txt
+copy $(ProjectDir)\Scripts3\*.js $(ProjectDir)\Scripts3\*.js.txt
 </PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

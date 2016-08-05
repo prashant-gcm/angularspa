@@ -1,0 +1,1 @@
+﻿var ExRulesEditorContext = { currentSection: "exam", currentConfigurationId: "1" };
